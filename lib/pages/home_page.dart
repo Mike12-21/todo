@@ -18,11 +18,10 @@ class _HomepageState extends State<Homepage> {
   void initState() {
     if (_myBox.get("TODOLIST") == null) {
       db.createInitialData();
+    } else {
+      db.loadData();
     }
-    else{
-      db.loadData() 
-    }
-    super.initState()
+    super.initState();
   }
 
   final _controller = TextEditingController();
